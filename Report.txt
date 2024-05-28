@@ -16,19 +16,23 @@ Number Name                 Level           Scores     Average
 **************************************************************
 
 
-Competitor with Highest average score:-
+Competitor with Highest average score
+
+****************************************
 
 Competitor Number 3, Name John, Aged 28.
 John is a Expert and awarded scores: 4 2 5 4 5 
 
+****************************************
 
-Summary Statistics:
+
+*** Summary Statistics ***
 Total Score: 114
 Average Score: 16.285714285714285
 Highest Score: 5
 Lowest Score: 1
 
-Frequency Report:
+*** Frequency Report ***
 Score 1: 5 times
 Score 2: 7 times
 Score 3: 6 times
