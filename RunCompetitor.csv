@@ -1,7 +1,7 @@
-1,Megan,megan@email.com,5/12/1999,CategoryC,Novice,5,1,2,5,4
-2,Alex,alex@email.com,8/11/1988,CategoryB,Intermediate,1,2,3,4,5
-3,John,john@email.com,2/10/1996,CategoryA,Expert,4,2,5,4,5
-4,Bush,bush@email.com,11/6/1982,CategoryA,Expert,2,4,5,3,1
-5,Alice,alice@email.com,7/4/1992,CategoryB,Intermediate,3,4,5,3,4
-6,Charlie,charlie@email.com,9/12/1987,CategoryC,Novice,3,2,5,2,1
-7,Kumar,kumar@email.com,10/11/2012,CategoryC,Novice,2,1,4,5,3
+1,Megan,megan@email.com,1999-05-12,CategoryC,Novice,5,1,2,5,4
+2,Alex,alex@email.com,1988-08-11,CategoryB,Intermediate,1,2,3,4,5
+3,John,john@email.com,1996-02-10,CategoryA,Expert,4,2,5,4,5
+4,Bush,bush@email.com,1982-11-06,CategoryA,Expert,2,4,5,3,1
+5,Alice,alice@email.com,1992-07-04,CategoryB,Intermediate,3,4,5,3,4
+6,Charlie,charlie@email.com,1987-09-12,CategoryC,Novice,3,2,5,2,1
+7,Kumar,kumar@email.com,2012-10-11,CategoryC,Novice,2,1,4,5,3
