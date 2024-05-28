@@ -1,0 +1,37 @@
+
+===== Competition Report =====
+
+
+Competitor Table:
+--------------------------------------------------------------
+No.    Name                 Level           Scores     Average            
+--------------------------------------------------------------
+1     Megan                Novice          5 1 2 5 4    3.4
+2     Alex                 Intermediate    1 2 3 4 5    3.0
+3     John                 Expert          4 2 5 4 5    4.0
+4     Bush                 Expert          2 4 5 3 1    3.0
+5     Alice                Intermediate    3 4 5 3 4    3.8
+6     Charlie              Novice          3 2 5 2 1    2.6
+7     Kumar                Novice          2 1 4 5 3    3.0
+--------------------------------------------------------------
+
+
+Competitor with Highest average score:-
+
+Competitor Number 3, Name John.
+John is a Expert and awarded scores : 4,2,5,4,5
+Overall score of 4.0.
+
+Summary Statistics:
+Total Score: 114
+Average Score: 16.285714285714285
+Highest Score: 5
+Lowest Score: 1
+
+Frequency Report:
+Score 1: 5 times
+Score 2: 7 times
+Score 3: 6 times
+Score 4: 8 times
+Score 5: 9 times
+
