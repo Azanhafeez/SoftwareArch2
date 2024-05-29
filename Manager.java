@@ -116,13 +116,14 @@ public class Manager extends JFrame {
             int competitor_number = Integer.parseInt(parts[0]);
             String name = parts[1];
             String email = parts[2];
-            String dob = parts[3];
-            String category = parts[4];
-            String level = parts[5];
+            String country = parts[3];
+            String dob = parts[4];
+            String category = parts[5];
+            String level = parts[6];
 
-            Competitor competitor = new Competitor(competitor_number, name, email, dob, category, level);
+            Competitor competitor = new Competitor(competitor_number, name, email, country, dob, category, level);
 
-            for (int i = 6; i < parts.length; i++) {
+            for (int i = 7; i < parts.length; i++) {
                 competitor.addScore(Integer.parseInt(parts[i]));
             }
 
@@ -149,12 +150,13 @@ public class Manager extends JFrame {
     // conversion
     private String competitorToFileString(Competitor competitor) {
         StringBuilder sb = new StringBuilder();
-        sb.append(competitor.getcompetitor_number()).append(",");
-        sb.append(competitor.getcompetitor_name()).append(",");
-        sb.append(competitor.getemail()).append(",");
-        sb.append(competitor.getcompetitor_dob()).append(",");
-        sb.append(competitor.getcategory()).append(",");
-        sb.append(competitor.getlevel());
+        sb.append(competitor.getCompetitorNumber()).append(",");
+        sb.append(competitor.getCompetitorName()).append(",");
+        sb.append(competitor.getEmail()).append(",");
+        sb.append(competitor.getCountry()).append(",");
+        sb.append(competitor.getCompetitorDob()).append(",");
+        sb.append(competitor.getCategory()).append(",");
+        sb.append(competitor.getLevel());
 
         for (int score : competitor.getScores()) {
             sb.append(",").append(score);
@@ -228,6 +230,7 @@ public class Manager extends JFrame {
             JTextField competitorNumberField = new JTextField();
             JTextField nameField = new JTextField();
             JTextField emailField = new JTextField();
+            JTextField countryField = new JTextField();
             JTextField dobField = new JTextField();
             JTextField categoryField = new JTextField();
             JTextField levelField = new JTextField();
@@ -235,6 +238,7 @@ public class Manager extends JFrame {
                     "Competitor No.", competitorNumberField,
                     "Competitor Name:", nameField,
                     "Email:", emailField,
+                    "Country:", countryField,
                     "Date of Birth (yyyy-MM-dd):", dobField,
                     "Category:", categoryField,
                     "Level:", levelField
@@ -245,11 +249,12 @@ public class Manager extends JFrame {
                     int competitor_number = Integer.parseInt(competitorNumberField.getText());
                     String name = nameField.getText();
                     String email = emailField.getText();
+                    String country = countryField.getText();
                     String dob = dobField.getText();
                     String category = categoryField.getText();
                     String level = levelField.getText();
 
-                    Competitor newCompetitor = new Competitor(competitor_number, name, email, dob, category, level);
+                    Competitor newCompetitor = new Competitor(competitor_number, name, email, country, dob, category, level);
                     boolean success = competitorList.register_competitor(newCompetitor);
 
                     if (success) {
@@ -271,6 +276,7 @@ public class Manager extends JFrame {
             JTextField competitorNumberField = new JTextField();
             JTextField nameField = new JTextField();
             JTextField emailField = new JTextField();
+            JTextField countryField = new JTextField();
             JTextField dobField = new JTextField();
             JTextField categoryField = new JTextField();
             JTextField levelField = new JTextField();
@@ -278,6 +284,7 @@ public class Manager extends JFrame {
                     "Competitor No.", competitorNumberField,
                     "Competitor Name:", nameField,
                     "Email:", emailField,
+                    "Country:", countryField,
                     "Date of Birth (yyyy-MM-dd):", dobField,
                     "Category:", categoryField,
                     "Level:", levelField
@@ -288,10 +295,11 @@ public class Manager extends JFrame {
                     int competitor_number = Integer.parseInt(competitorNumberField.getText());
                     String name = nameField.getText();
                     String email = emailField.getText();
+                    String country = countryField.getText();
                     String dob = dobField.getText();
                     String category = categoryField.getText();
                     String level = levelField.getText();
-                    Competitor updatedCompetitor = new Competitor(competitor_number, name, email, dob, category, level);
+                    Competitor updatedCompetitor = new Competitor(competitor_number, name, email, country, dob, category, level);
                     boolean success = competitorList.update_details(competitor_number, updatedCompetitor);
 
                     if (success) {
@@ -343,7 +351,7 @@ public class Manager extends JFrame {
                             String scoreInput = JOptionPane.showInputDialog("Enter score " + (i + 1) + ":");
                             int score = Integer.parseInt(scoreInput);
                             if (score < 0 || score > 5) {
-                                JOptionPane.showMessageDialog(null, "Invalid score. Please enter a score between 0 and 5.");
+                                JOptionPane.showMessageDialog(null, "Invalid score. Please award a score between 0 and 5.");
                                 return;
                             }
                             scores.add(score);

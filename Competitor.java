@@ -7,70 +7,80 @@ import java.util.List;
 import java.util.Objects;
 
 public class Competitor {
-    private int competitor_number;
-    private String competitor_name;
+    private int competitorNumber;
+    private String competitorName;
     private String email;
-    private String competitor_dob;
+    private String country;
+    private String competitorDob;
     private String category;
     private String level;
     private List<Integer> scores;
 
-    public Competitor(int competitor_number, String competitor_name, String email, String competitor_dob, String category, String level) {
-        this.competitor_number = competitor_number;
-        this.competitor_name = competitor_name;
+    public Competitor(int competitorNumber, String competitorName, String email, String country, String competitorDob, String category, String level) {
+        this.competitorNumber = competitorNumber;
+        this.competitorName = competitorName;
         this.email = email;
-        this.competitor_dob = competitor_dob;
+        this.country = country;
+        this.competitorDob = competitorDob;
         this.category = category;
         this.level = level;
         this.scores = new ArrayList<>();
     }
-    
-    // getter setters
-    public int getcompetitor_number() {
-        return competitor_number;
+
+    // Getter and setter methods
+    public int getCompetitorNumber() {
+        return competitorNumber;
     }
 
-    public void setcompetitor_number(int competitor_number) {
-        this.competitor_number = competitor_number;
+    public void setCompetitorNumber(int competitorNumber) {
+        this.competitorNumber = competitorNumber;
     }
 
-    public String getcompetitor_name() {
-        return competitor_name;
+    public String getCompetitorName() {
+        return competitorName;
     }
 
-    public void setcompetitor_name(String competitor_name) {
-        this.competitor_name = competitor_name;
+    public void setCompetitorName(String competitorName) {
+        this.competitorName = competitorName;
     }
 
-    public String getemail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setemail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getcompetitor_dob() {
-        return competitor_dob;
+    public String getCountry() {
+        return country;
     }
 
-    public void setcompetitor_dob(String competitor_dob) {
-        this.competitor_dob = competitor_dob;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getcategory() {
+    public String getCompetitorDob() {
+        return competitorDob;
+    }
+
+    public void setCompetitorDob(String competitorDob) {
+        this.competitorDob = competitorDob;
+    }
+
+    public String getCategory() {
         return category;
     }
 
-    public void setcategory(String category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
-    public String getlevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setlevel(String level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
@@ -93,7 +103,7 @@ public class Competitor {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append(String.format("%-5d %-20s %-15s", competitor_number, competitor_name, level));
+        result.append(String.format("%-5d %-20s %-15s", competitorNumber, competitorName, level));
         result.append(" ");
         for (int score : scores) {
             result.append(score).append(" ");
@@ -102,11 +112,12 @@ public class Competitor {
         return result.toString();
     }
 
+    // full details
     public String getFullDetails() {
         StringBuilder result = new StringBuilder();
-        int age = calculateAge(competitor_dob);
-        result.append(String.format("Competitor Number %d, Name %s, Aged %d.%n", competitor_number, competitor_name, age));
-        result.append(String.format("%s is a %s and awarded scores: ", competitor_name, level));
+        int age = calculateAge(competitorDob);
+        result.append(String.format("Competitor Number: %d, Name: %s, Country: %s, Age: %d, Category: %s, Level: %s, Scores: ",
+                competitorNumber, competitorName, country, age, category, level));
         for (int score : scores) {
             result.append(score).append(" ");
         }
@@ -114,6 +125,7 @@ public class Competitor {
         return result.toString();
     }
 
+    // age calculation using DOB
     private int calculateAge(String dob) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try {
@@ -126,13 +138,14 @@ public class Competitor {
         }
     }
 
+    // short details
     public String getShortDetails() {
-        return String.format("CN %d (%s) scored overall score %.1f.", competitor_number, getInitials(), calculateOverallScore());
+        return String.format("CN %d (%s) scored overall score %.1f.", competitorNumber, getInitials(), calculateOverallScore());
     }
 
     private String getInitials() {
         StringBuilder initials = new StringBuilder();
-        String[] nameParts = competitor_name.split(" ");
+        String[] nameParts = competitorName.split(" ");
         for (String part : nameParts) {
             initials.append(part.charAt(0));
         }

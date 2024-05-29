@@ -44,7 +44,7 @@ public class CompetitorList {
     Competitor existingCompetitor = getCompetitorByNumber(competitor_number);
     if (existingCompetitor != null) {
       // Update data
-      existingCompetitor.setlevel(updatedCompetitor.getlevel());
+      existingCompetitor.setLevel(updatedCompetitor.getLevel());
 
       return true; // Success
     } else {
@@ -60,7 +60,7 @@ public class CompetitorList {
   // get competitor data using competitor number
   public Competitor getCompetitorByNumber(int competitor_number) {
     return competitors.stream()
-        .filter(competitor -> competitor.getcompetitor_number() == competitor_number)
+        .filter(competitor -> competitor.getCompetitorNumber() == competitor_number)
         .findFirst()
         .orElse(null);
   }

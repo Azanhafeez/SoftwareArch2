@@ -20,8 +20,7 @@ Competitor with Highest average score
 
 ****************************************
 
-Competitor Number 3, Name John, Aged 28.
-John is a Expert and awarded scores: 4 2 5 4 5 
+Competitor Number: 3, Name: John, Country: USA, Age: 27, Category: CategoryA, Level: Expert, Scores: 4 2 5 4 5 
 
 ****************************************
 
